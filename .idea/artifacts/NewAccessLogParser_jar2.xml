@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="NewAccessLogParser:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/NewAccessLogParser_jar2</output-path>
+    <root id="archive" name="NewAccessLogParser.jar">
+      <element id="module-output" name="NewAccessLogParser" />
+      <element id="artifact" artifact-name="NewAccessLogParser:jar" />
+    </root>
+  </artifact>
+</component>
