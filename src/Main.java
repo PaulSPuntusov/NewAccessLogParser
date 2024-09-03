@@ -26,12 +26,23 @@ public class Main {
                 BufferedReader reader = new BufferedReader(fileReader);
                 String line;
                 int count = 0;
+                int length = 0;
                 int maxLength = 0;
                 int minLength = 0;
                 if (reader.readLine() != null) minLength = reader.readLine().length();
                 while ((line = reader.readLine()) != null) {
-                    int length = line.length();
-                    if (length > 1024) throw new RuntimeException("Строка не должна быть длиннее 1024 символа");
+                    length = line.length();
+                    if (length > 1024){
+                        throw new RuntimeException("Строка не должна быть длиннее 1024 символа");
+                    }
+                    try {
+                        length = line.length();
+                    } catch (RuntimeException re){
+                        try {
+                            System.out.println( "String must be shorter than 1024 characters");
+                        } catch (MyOwnException moe){
+                            System.out.println("обернул исключение на длину 1024 своим кастомным исключением");
+                    }
                     if (length > maxLength) maxLength = length;
                     if (length < minLength) minLength = length;
                     count++;
